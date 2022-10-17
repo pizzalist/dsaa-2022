@@ -12,9 +12,9 @@ with open("customers.csv") as customer_data:
         else:
             customer_list.append(data.split(","))
         line_counter += 1
+print(data_header)
+# print("Header : \t", data_header)
+# for i in range(0,10):
 
-print("Header : \t", data_header)
-for i in range(0,10):
-
-    print("Data", i, ":\t\t", customer_list[i])
-print(len(customer_list))
+#     print("Data", i, ":\t\t", customer_list[i])
+# print(len(customer_list))
