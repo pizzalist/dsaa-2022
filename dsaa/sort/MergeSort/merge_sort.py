@@ -32,3 +32,14 @@ def merge_sort(unsorted_array):
             unsorted_array[k] = right[j]
             j += 1
             k += 1   
+
+def print_list(array1):
+    for i in range(len(array1)):
+        print(array1[i], end=" ")
+    print()
+
+
+if __name__ == '__main__':
+    from random import randint
+    array = [randint(1,1000) for _ in range(10)]
+    print(array)

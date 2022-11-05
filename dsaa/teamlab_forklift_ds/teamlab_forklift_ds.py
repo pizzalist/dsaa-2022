@@ -290,28 +290,15 @@ def build_linkedlistbag(sorted_dataset : dict):
         Timestamp  : 2019-06-01 08:30:48.832000
         -------------------------- 생략 --------------
     """
-    # list_bag = LinkedListBag(ForkliftNode)
-    # print(list(list_bag))
-    # list_bag2 = list_bag.append(sorted_dataset)
-    # print(list_bag2)
-    # sorted_dataset = sorted_dataset
     a = sorted_dataset
     keys_list = list(sorted_dataset.keys())
     linkedlist_bag_dict = {}
-    # a = LinkedListBag()
-    # print(sorted_dataset[0][0][0])
-    # a.append(ForkliftNode(keys_list[1], sorted_dataset[0][0], sorted_dataset[0][1], sorted_dataset[0][2]))
-    # print(a)
-    # for i in keys_list:
-    #     linkedlist_bag_dict[i] = LinkedListBag()
-    
 
+    
     for i in keys_list: # TEAM..., 
         linkedlist_bag_dict[i] = LinkedListBag()
-        # a = linkedlist_bag_dict[i]
         for j in a[i] : # ['172978.787361283','252229.400114715','2019-06-01 08:30:48.797'] ['172978.787361283','252229.400114715','2019-06-01 08:30:48.797']
             linkedlist_bag_dict[i].append(ForkliftNode(i, float(j[0]), float(j[1]), datetime.strptime(j[2], "%Y-%m-%d %H:%M:%S.%f")))
-            # LinkedListBag.append(ForkliftNode(i,orted_dataset[i][j][0],sorted_dataset[i][j][1],sorted_dataset[i][j][2]))
 
      
     return linkedlist_bag_dict
