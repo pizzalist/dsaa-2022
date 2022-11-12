@@ -221,8 +221,8 @@ def load_dataset(filename : str):
                 dataset_list.append(command_data[j][2])
                 dataset[data_header[i]].append(dataset_list)
                 dataset_list = []
-            
-                  
+    
+     
     return dataset
 
 
@@ -256,8 +256,10 @@ def sort_dataset(dataset : dict):
                            '2019-06-01 08:30:48.896'],
                           [### 나머지 출력부분은 생략됨]]
     """
+    # i => index
+    sorted_dataset = {}
     for i in dataset.keys():
-        sorted_dataset = dataset
+        # sorted_dataset = dataset #왜 ?? 메모리 사용 공간 더 잡아먹음 : 지우기 
         sorted_dataset[i] = sorted(dataset[i], key=lambda x : x[2])
     
     return sorted_dataset
@@ -290,8 +292,8 @@ def build_linkedlistbag(sorted_dataset : dict):
         Timestamp  : 2019-06-01 08:30:48.832000
         -------------------------- 생략 --------------
     """
-    a = sorted_dataset
-    keys_list = list(sorted_dataset.keys())
+    a = sorted_dataset #모르는 변수 지정 지향
+    keys_list = list(sorted_dataset.keys()) # list 제외 가능 ((iterator))
     linkedlist_bag_dict = {}
 
     
@@ -300,7 +302,7 @@ def build_linkedlistbag(sorted_dataset : dict):
         for j in a[i] : # ['172978.787361283','252229.400114715','2019-06-01 08:30:48.797'] ['172978.787361283','252229.400114715','2019-06-01 08:30:48.797']
             linkedlist_bag_dict[i].append(ForkliftNode(i, float(j[0]), float(j[1]), datetime.strptime(j[2], "%Y-%m-%d %H:%M:%S.%f")))
 
-     
+  
     return linkedlist_bag_dict
 
 

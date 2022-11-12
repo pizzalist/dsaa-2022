@@ -43,3 +43,4 @@ if __name__ == '__main__':
     from random import randint
     array = [randint(1,1000) for _ in range(10)]
     print(array)
+    merge_sort(array)
